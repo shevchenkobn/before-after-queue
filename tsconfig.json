@@ -38,7 +38,7 @@
     "preserveConstEnums": true,
     "pretty": true,
     "removeComments": false,
-    "resolveJsonModule": true,
+    "resolveJsonModule": false,
     "rootDir": "./src",
     "skipLibCheck": false,
     "sourceMap": true,
