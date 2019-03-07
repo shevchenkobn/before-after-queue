@@ -1,0 +1,43 @@
+{
+  "name": "before-after-queue",
+  "version": "0.0.0",
+  "description": "A queue for JS and TS defined by before and after clauses.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "npm:g:dev": "sudo npm i rimraf tslint typescript nodemon tslint-config-airbnb -g -D",
+    "npm:g:dev:win": "npm i rimraf tslint typescript nodemon tslint-config-airbnb -g -D",
+    "build": "rimraf ./dist && tsc",
+    "debug": "node ./dist/.sandbox",
+    "debug:b": "npm run build && npm run debug",
+    "watch": "nodemon -w src/ -e ts,yaml -x \"npm run debug:b\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shevchenkobn/before-after-queue.git"
+  },
+  "keywords": [
+    "queue",
+    "before",
+    "after",
+    "before-queue",
+    "before_queue",
+    "after-queue",
+    "after_queue",
+    "priority",
+    "priority-queue",
+    "priority_queue",
+    "tree"
+  ],
+  "author": "shevchenkobn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shevchenkobn/before-after-queue/issues"
+  },
+  "homepage": "https://github.com/shevchenkobn/before-after-queue#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.9",
+    "jest": "^24.1.0",
+    "ts-jest": "^24.0.0"
+  }
+}
