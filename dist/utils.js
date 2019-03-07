@@ -10,7 +10,7 @@
     "use strict";
     exports.__esModule = true;
     var errors_1 = require("./errors");
-    var regex = /^\w-$/;
+    var regex = /^[\w-]+$/;
     exports.getRegexString = function () { return regex.toString(); };
     // export function isServiceIdentifier(id: any, throws?: true): true | never;
     // export function isServiceIdentifier(id: any, throws: false): id is ServiceIdentifier;
@@ -34,7 +34,9 @@
     function isQueueConfig(config) {
         return (typeof config === 'object' && config !== null
             && (errors_1.isErrorThrowLevel(config.errorLevel)
-                || Array.isArray(config.errorLevel) && config.errorLevel.every(errors_1.isErrorThrowLevel)));
+                || (Array.isArray(config.errorLevel)
+                    && config.errorLevel.length > 0
+                    && config.errorLevel.every(errors_1.isErrorThrowLevel))));
     }
     exports.isQueueConfig = isQueueConfig;
 });

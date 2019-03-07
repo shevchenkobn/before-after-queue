@@ -1,3 +1,0 @@
-test('export test', () => {
-
-});

@@ -11,10 +11,13 @@ export function isQueueOrderPointer(pointer: any, throws = true): pointer is Que
   }
   if (Array.isArray(pointer)) {
     if (!throws) {
-      return pointer.every(id => isServiceIdentifier(id, false));
+      return pointer.length > 0 && pointer.every(id => isServiceIdentifier(id, false));
+    }
+    if (pointer.length === 0) {
+      throw new QueueError(QueueErrorCode.QUEUE_ORDER_POINTER_BAD_ARRAY);
     }
     try {
-      return pointer.every(id => isServiceIdentifier(id));
+      return pointer.length > 0 && pointer.every(id => isServiceIdentifier(id));
     } catch (err) {
       throw new QueueError(QueueErrorCode.QUEUE_ORDER_POINTER_BAD_ARRAY, err);
     }

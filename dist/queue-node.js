@@ -20,10 +20,13 @@
         }
         if (Array.isArray(pointer)) {
             if (!throws) {
-                return pointer.every(function (id) { return utils_1.isServiceIdentifier(id, false); });
+                return pointer.length > 0 && pointer.every(function (id) { return utils_1.isServiceIdentifier(id, false); });
+            }
+            if (pointer.length === 0) {
+                throw new errors_1.QueueError(errors_1.QueueErrorCode.QUEUE_ORDER_POINTER_BAD_ARRAY);
             }
             try {
-                return pointer.every(function (id) { return utils_1.isServiceIdentifier(id); });
+                return pointer.length > 0 && pointer.every(function (id) { return utils_1.isServiceIdentifier(id); });
             }
             catch (err) {
                 throw new errors_1.QueueError(errors_1.QueueErrorCode.QUEUE_ORDER_POINTER_BAD_ARRAY, err);

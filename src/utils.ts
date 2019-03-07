@@ -4,7 +4,7 @@ export type Maybe<T> = T | null | undefined;
 
 export type ServiceIdentifier = string | symbol;
 
-const regex = /^\w-$/;
+const regex = /^[\w-]+$/;
 export const getRegexString = () => regex.toString();
 
 // export function isServiceIdentifier(id: any, throws?: true): true | never;
@@ -34,7 +34,11 @@ export function isQueueConfig(config: any): config is IQueueConfig {
     typeof config === 'object' && config !== null
     && (
       isErrorThrowLevel(config.errorLevel)
-      || Array.isArray(config.errorLevel) && config.errorLevel.every(isErrorThrowLevel)
+      || (
+        Array.isArray(config.errorLevel)
+        && config.errorLevel.length > 0
+        && config.errorLevel.every(isErrorThrowLevel)
+      )
     )
   );
 }
