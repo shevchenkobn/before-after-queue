@@ -10,8 +10,8 @@
     "use strict";
     exports.__esModule = true;
     var errors_1 = require("./errors");
-    exports.regex = /^\w-$/;
-    exports.getRegexString = function () { return exports.regex.toString(); };
+    var regex = /^\w-$/;
+    exports.getRegexString = function () { return regex.toString(); };
     // export function isServiceIdentifier(id: any, throws?: true): true | never;
     // export function isServiceIdentifier(id: any, throws: false): id is ServiceIdentifier;
     function isServiceIdentifier(id, throws) {
@@ -22,7 +22,7 @@
             }
             return false;
         }
-        if (typeof id === 'string' && !exports.regex.test(id)) {
+        if (typeof id === 'string' && !regex.test(id)) {
             if (throws) {
                 throw new errors_1.QueueError(errors_1.QueueErrorCode.ID_BAD_REGEX);
             }

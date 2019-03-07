@@ -49,6 +49,6 @@
     "suppressImplicitAnyIndexErrors": false,
     "target": "es3",
     "typeRoots": ["@types"],
-    "types": ["node"] // FIXME: not sure about this
+    "types": ["node", "jest"] // FIXME: not sure about this
   }
 }

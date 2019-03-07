@@ -1,29 +1,48 @@
 import { BeforeAfterQueue, IBeforeAfterQueue } from './queue';
 import {
-  cloneQueueOrderPointer,
-  isQueueOrderPointer,
   QueueNode,
   QueueOrderPointer,
+  cloneQueueOrderPointer,
+  isQueueOrderPointer,
 } from './queue-node';
 import {
+  QueueError,
+  QueueNodeError,
   QueueErrorCode,
+  getErrorMessage,
   ErrorThrowLevel,
   isErrorThrowLevel,
-  getErrorMessage,
-  QueueError, QueueNodeError,
 } from './errors';
+import {
+  Maybe,
+  ServiceIdentifier,
+  isServiceIdentifier,
+  getRegexString,
+  IQueueConfig,
+  isQueueConfig,
+} from './utils';
+
 
 export {
   IBeforeAfterQueue,
   BeforeAfterQueue,
-  cloneQueueOrderPointer,
-  isQueueOrderPointer,
+
   QueueNode,
   QueueOrderPointer,
-  isErrorThrowLevel,
-  ErrorThrowLevel,
-  QueueErrorCode,
+  cloneQueueOrderPointer,
+  isQueueOrderPointer,
+
   QueueError,
-  getErrorMessage,
   QueueNodeError,
+  QueueErrorCode,
+  getErrorMessage,
+  ErrorThrowLevel,
+  isErrorThrowLevel,
+
+  Maybe,
+  ServiceIdentifier,
+  isServiceIdentifier,
+  getRegexString,
+  IQueueConfig,
+  isQueueConfig,
 };

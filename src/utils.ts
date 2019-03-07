@@ -4,7 +4,7 @@ export type Maybe<T> = T | null | undefined;
 
 export type ServiceIdentifier = string | symbol;
 
-export const regex = /^\w-$/;
+const regex = /^\w-$/;
 export const getRegexString = () => regex.toString();
 
 // export function isServiceIdentifier(id: any, throws?: true): true | never;
